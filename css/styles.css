@@ -1,0 +1,42 @@
+
+body {
+  background-color: #ffadd6;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+H1 {
+  font-size: 80px;
+}
+
+.container {
+  margin: 30px;
+  height: 700px;
+  border-radius: 30px;
+}
+
+#header-styles {
+  text-align: center;
+}
+
+#col-8-styles {
+  height: 600px;
+  background-image: url("../images/farm.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: scroll;
+  border-radius: 30px;
+}
+
+.col-2-styles {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.col-2-styles h2 {
+  text-decoration: underline;
+  font-size: 60px;
+}
+
+.player-row-styles {
+  margin-bottom: 10px;
+}
