@@ -10,8 +10,11 @@ H1 {
 
 .container {
   margin: 30px;
-  height: 700px;
-  border-radius: 30px;
+  height: 850px;
+  border-radius: 30px;background-image: url("../images/farm.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
 }
 
 #header-styles {
@@ -20,10 +23,6 @@ H1 {
 
 #col-8-styles {
   height: 600px;
-  background-image: url("../images/farm.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-attachment: scroll;
   border-radius: 30px;
 }
 
@@ -39,4 +38,29 @@ H1 {
 
 .player-row-styles {
   margin-bottom: 10px;
+}
+
+.pig-btn {
+  background: transparent;
+  background-image: url("../images/pig1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 300px;
+  border: none;
+  padding: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
+#pig-2-btn {
+  float: right;
+}
+
+.playerOneInputs {
+
+}
+
+#center-row-styles {
+  margin-top: 250px;
 }

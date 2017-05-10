@@ -1,10 +1,10 @@
 
 //--------------Back End--------------//
 //Player constructor
-function Player(name, age,) {
-  this.name = name;
+function Player(name, age) {
+  this.pname = name;
   this.age = age;
-
+  this.score = 0;
 }
 
 //Method to roll dice
@@ -14,74 +14,47 @@ max = Math.floor(max);
 return Math.floor(Math.random() * (max - min) + 1);
 }
 
-//Method to decide whether player gets to
-Player.prototype.determine = function(result) {
-  alert(result);
-  if (result === 1) {
-
-    alert("You rolled One");
-    return false;
-
-  } else if (result >= 2) {
-
-    Player.score = [result];
-
-    console.log(Player.score);
-
-    var chosen = prompt("Would you like to keep rolling?");
-
-    if (chosen === "yes") {
-      Player.score[0] += this.roll(1,7);
-      console.log(result);
-
-    }
-  }
-}
-
-Player.prototype.playerTurn = function (){
-  var score = 0;
-  for (var index = 1; index > 0; index +=1) {
-    var rollValue = this.roll(1,7);
-    alert(rollValue);
-    if (rollValue === 1) {
-      score = 0;
-      index = -1;
-    }
-    else {
-      score += rollValue;
-      var hold = prompt("would you like to hold?");
-      if (hold === "yes") {
-        index = -1;
-      }
-    }
-    
-    $("#playerOneScore").text(score);
-  }
-
-}
-
-
 //--------------Front End--------------//
 $(document).ready(function() {
-  $("form.playerInputs").submit(function(event){
+  $("form.playerOneInputs").submit(function(event){
     event.preventDefault();
     //THIS TAKES IN USER INPUT NAME AND AGE
     var userNameOne = $("#playerOneName").val();
     var userAgeOne = $("#playerOneAge").val();
+    var playerOne = new Player(userNameOne, userAgeOne);
     var userNameTwo = $("#playerTwoName").val();
     var userAgeTwo = $("#playerTwoAge").val();
-
-    var playerOne = new Player(userNameOne, userAgeOne);
     var playerTwo = new Player(userNameTwo, userAgeTwo);
-    // playerOne.roll(1,7);
-    // alert(playerOne.roll(1,7));
-    // playerOne.determine(playerOne.roll(1,7));
-    // playerTwo.roll();
-    playerOne.playerTurn();
 
+    //click pig 1 to roll dice
+    $("#pig-1-btn").click(function(){
+      var rollValue = playerOne.roll(1,7);
 
-    //USER TWO INPUTS
+      if (rollValue === 1) {
+        playerOne.score = 0;
+      }
+      else {
+        playerOne.score += rollValue;
+        if (playerOne.score >= 25) {
+          $("#playerOneWinner").text(playerOne.pname + " is the winner!!!");
+        }
+      }
+      $("#playerOneScore").text(playerOne.score);
+    });
 
-
+    //click pig 2 to roll dice
+    $("#pig-2-btn").click(function(){
+      var rollValue = playerTwo.roll(1,7);
+       if (rollValue === 1) {
+        playerTwo.score = 0;
+      }
+      else {
+        playerTwo.score += rollValue;
+        if (playerTwo.score >= 25) {
+          $("#playerTwoWinner").text(playerTwo.pname + " is the winner!!!");
+        }
+      }
+      $("#playerTwoScore").text(playerTwo.score);
+    });
   });
 });

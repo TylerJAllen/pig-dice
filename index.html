@@ -14,17 +14,18 @@
     </div>
     <div class="container">
       <div class="row">
+        <!-- column for player 1 -->
         <div class="col-xs-2 col-2-styles">
           <div class="row">
             <h2>Pig 1</h2>
           </div>
           <div class="row player-row-styles">
-            <form class="playerInputs">
+            <form class="playerOneInputs">
               <input id="playerOneName" type="text" name="playerOne" placeholder="Name" value="">
             </form>
           </div>
           <div class="row player-row-styles">
-            <form class="playerInputs">
+            <form class="playerOneInputs">
               <input id="playerOneAge" type="text" name="playerOne" placeholder="Age" value="">
             </form>
           </div>
@@ -33,22 +34,28 @@
           </div>
           <div class="row">
             <h2 id="playerOneScore"></h2>
+            <h3 id="playerOneWinner"></h3>
           </div>
         </div>
+        <!-- middle column for roll buttons -->
         <div class="col-xs-8" id="col-8-styles">
-
+          <div class="row" id = "center-row-styles">
+            <button type="submit" class="pig-btn" id="pig-1-btn" name="button">Roll!</button>
+            <button type="submit" class="pig-btn" id="pig-2-btn" name="button">Roll!</button>
+          </div>
         </div>
+        <!-- column for player 2 -->
         <div class="col-xs-2 col-2-styles">
           <div class="row">
             <h2>Pig 2</h2>
           </div>
           <div class="row player-row-styles">
-            <form class="playerInputs">
+            <form class="playerTwoInputs">
               <input id="playerTwoName" type="text" name="playerTwo" placeholder="Name" value="">
             </form>
           </div>
           <div class="row player-row-styles">
-            <form class="playerInputs">
+            <form class="playerTwoInputs">
               <input id="playerTwoAge" type="text" name="playerTwo" placeholder="Age" value="">
             </form>
           </div>
@@ -57,11 +64,12 @@
           </div>
           <div class="row">
             <h2 id="playerTwoScore"></h2>
+            <h3 id="playerTwoWinner"></h3>
           </div>
         </div>
       </div>
-      <form class="playerInputs">
-        <button type="submit" class="btn" name="button">Go Piggy Go!</button>
+      <form class="playerOneInputs">
+        <button type="submit" class="btn center-block" id="player-1-btn" name="button">Start!</button>
       </form>
     </div>
   </body>
